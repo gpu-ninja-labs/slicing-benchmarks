@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+  - name: slicing-benchmarks
+    image: ghcr.io/gpu-ninja/slicing-benchmarks:v0.1.0
+    tty: true
+    resources:
+      claims:
+      - name: gpu
+  resourceClaims:
+  - name: gpu
+    source:
+      resourceClaimName: shared-gpu

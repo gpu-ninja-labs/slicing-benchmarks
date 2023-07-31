@@ -1,0 +1,8 @@
+apiVersion: gpu.resource.nvidia.com/v1alpha1
+kind: GpuClaimParameters
+metadata:
+  name: shared-gpu
+spec:
+  count: 1
+  sharing:
+    strategy: TimeSlicing
